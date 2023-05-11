@@ -1,3 +1,11 @@
+# Interview Prep
+
+Javascript Interview Questions : [Github](https://github.com/sudheerj/javascript-interview-questions)
+
+React/Redux Interview Prep : [Github](https://github.com/sudheerj/reactjs-interview-questions)
+
+Redux Interview Questions : [Link](https://www.interviewbit.com/redux-interview-questions/#redux-mcq-questions)
+
 # Important Links
 
 **_20 React Projects built from scratch for your practice purpose : [Youtube playlist](https://www.youtube.com/playlist?list=PL-J2q3Ga50oMQa1JdSJxYoZELwOJAXExP)_**
@@ -28,13 +36,190 @@ Prop Drilling : [Article](https://kentcdodds.com/blog/prop-drilling)
 
 Redux : [Article](https://blog.logrocket.com/understanding-redux-tutorial-examples/)
 
-Github Repo for React/Redux Interview Prep : [Repo](https://github.com/sudheerj/reactjs-interview-questions)
-
-Redux Interview Questions : [Link](https://www.interviewbit.com/redux-interview-questions/#redux-mcq-questions)
-
 Firebase : [GFG Link](https://www.geeksforgeeks.org/how-to-use-firestore-database-in-reactjs/)
 
-# Assignment Solutions
+# Assignment Solutions Placement Readiness
+
+## Shopping
+
+[Question](https://course.acciojob.com/idle?question=0252fab2-ae70-4fe8-890b-084c4b5b8e25)
+
+Solution :
+
+```javascript
+function supermarket(prices, n, k) {
+  // write code here
+  // do not console.log the answer
+  // return sorted array
+  const sortedPrices = prices.sort((a, b) => a - b);
+
+  // prices.sort((a, b) => a - b) is a JavaScript method that sorts an array of numbers in ascending order.
+  // The sort() method is a built-in function in JavaScript that sorts the elements of an array in place and returns the sorted array. By default, the sort() method sorts the elements in lexicographical order (alphabetical order for strings). However, if the array contains numbers, this default behavior may not be appropriate, as numbers should be sorted based on their numerical value rather than their string representation.
+  // In this case, the sort() method is passed a function that compares two numbers (a and b) and returns the difference between them (a - b). This function is known as a "compare function", and it tells the sort() method how to sort the array.
+  // When the sort() method compares two numbers a and b, it subtracts b from a. If the result is negative, it means that a should come before b in the sorted array. If the result is positive, it means that b should come before a. If the result is zero, it means that a and b are equal, and their relative order doesn't matter.
+  // Overall, the code prices.sort((a, b) => a - b) sorts the prices array in ascending order based on the numerical values of its elements.
+
+  const sum = sortedPrices.slice(2, k + 2).reduce((acc, curr) => acc + curr, 0);
+  return sum;
+}
+
+var readline = require("readline").createInterface(process.stdin);
+
+let inputArr = [];
+var lineNumber = -1;
+var A;
+var B;
+readline.on("line", readInputs);
+
+function readInputs(line) {
+  inputArr.push(line);
+  lineNumber++;
+  if (lineNumber == 0) {
+    [A, B] = inputArr[0].split(" ").map((x) => parseInt(x));
+  }
+
+  if (lineNumber === 1) {
+    logic("s");
+    readline.close();
+  }
+}
+
+function logic(input) {
+  //inputArr.shift();
+  const n = A;
+  const k = B;
+  const prices = inputArr[1].split(" ").map((x) => parseInt(x));
+  console.log(supermarket(prices, n, k));
+}
+```
+
+## JS Dynamic Function Input
+
+[Question](https://course.acciojob.com/idle?question=33a20917-78e7-461c-8956-67295b66b736)
+
+```javascript
+function takeMultipleNumbersAndAdd(arr) {
+  //do not console.log
+  // return the sum
+  const sum = arr.reduce((acc, curr) => acc + curr, 0);
+  return sum;
+}
+/*Do not change the code below*/
+
+var readline = require("readline").createInterface(process.stdin);
+let inputArr = [];
+var lineNumber = -1;
+var inputSize;
+var K;
+
+//multipleline input from User
+readline.on("line", readInputs);
+
+function readInputs(line) {
+  inputArr.push(line);
+  lineNumber++;
+  //Exit Condition
+  if (lineNumber == 0) {
+    logic("s");
+    readline.close();
+  }
+}
+
+function logic(input) {
+  inputArr = inputArr[0].split(" ").map((x) => +x);
+  console.log(takeMultipleNumbersAndAdd(inputArr));
+}
+```
+
+## Student Records - 5
+
+[Question](https://course.acciojob.com/idle?question=7254da76-885a-4e17-9f8a-75b497fe58e8)
+
+```javascript
+function StudentRecords(Data) {
+  const names = [];
+  for (let i = 0; i < Data.length; i++) {
+    if (Data[i].marks > 50) {
+      names.push(Data[i].name);
+    }
+  }
+  return names;
+}
+
+const rl = require("readline");
+
+const reader = rl.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
+
+reader.on("line", (line) => {
+  let str = line;
+  str = str.replace(/\\/g, "");
+  const A = JSON.parse(str);
+
+  console.log(StudentRecords(A));
+});
+```
+
+## Palindrome String
+
+[Question](https://course.acciojob.com/idle?question=ad163b7c-8fea-42d3-a8e9-39d4d6a06b18)
+
+```javascript
+import java.io.*;
+import java.util.*;
+
+public class Main {
+	static int isPalindrome(String str)
+      {
+              //write code here
+		  // Remove all non-alphabetic characters and convert to lower case
+        String alphaStr = str.replaceAll("[^a-zA-Z]", "").toLowerCase();
+        int left = 0;
+        int right = alphaStr.length() - 1;
+        while (left < right) {
+            if (alphaStr.charAt(left) != alphaStr.charAt(right)) {
+                return 0; // Not a palindrome
+            }
+            left++;
+            right--;
+        }
+        return 1; // Is a palindrome
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String str=sc.nextLine();
+        int result = isPalindrome(str);
+        System.out.println(result);
+    }
+}
+```
+
+## JS Object - 2
+
+[Question](https://course.acciojob.com/idle?question=d4d0def5-10d3-4331-9b18-7ee341ae0870)
+
+```javascript
+function getObjKeys(obj) {
+  // write code here
+  // return the answer, dont use console.log here
+  return Object.keys(obj).join();
+}
+
+const rl = require("readline");
+const reader = rl.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
+
+reader.on("line", (line) => {
+  const obj = JSON.parse(line);
+  console.log(getObjKeys(obj));
+});
+```
+
+# Assignment Solutions ReactJS
 
 ## Flames App
 
