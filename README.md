@@ -336,7 +336,7 @@ function PrintCharFreq(myStr) {
 }
 ```
 
-# Sum and Mean
+## Sum and Mean
 
 [Question](https://course.acciojob.com/idle?question=73906a2d-1dfd-438d-a0ae-8a76b6cfb008)
 
