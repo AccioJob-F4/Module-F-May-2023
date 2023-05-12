@@ -227,6 +227,281 @@ reader.on("line", (line) => {
 });
 ```
 
+## Total Book Price
+
+[Question](https://course.acciojob.com/idle?question=322f8939-1307-4bdd-a34a-541271a02c4f)
+
+```javascript
+function totalPrice(arr) {
+  // return the sum
+  // do not console.log here
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i].price;
+  }
+  return sum;
+}
+/*Do not change the code below */
+
+var readline = require("readline").createInterface(process.stdin);
+
+let inputArr = [];
+var lineNumber = -1;
+var inputSize;
+
+//multipleline input from User
+readline.on("line", readInputs);
+
+function readInputs(line) {
+  inputArr.push(line);
+  lineNumber++;
+
+  //Exit Condition
+  if (lineNumber == 0) {
+    logic("s");
+    readline.close();
+  }
+}
+
+function logic(input) {
+  let str = JSON.parse(inputArr[0].trim().replace(/\\/g, ""));
+  console.log(totalPrice(str));
+}
+```
+
+## Student records - 6
+
+[Question](https://course.acciojob.com/idle?question=4eb99aa3-b0de-4a80-8e59-7433d289e4c0)
+
+```javascript
+function StudentRecords(Data) {
+  // return using return keyword
+  // do not console.log here
+  let sum = 0;
+  for (let i = 0; i < Data.length; i++) {
+    if (Data[i].id > 120) {
+      sum += Data[i].marks;
+    }
+  }
+  return sum;
+}
+
+/*Do not change the code below*/
+const rl = require("readline");
+
+const reader = rl.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
+
+reader.on("line", (line) => {
+  let str = line;
+  str = str.replace(/\\/g, "");
+  const A = JSON.parse(str);
+
+  console.log(StudentRecords(A));
+});
+```
+
+## Print Counts
+
+[Question](https://course.acciojob.com/idle?question=5fcf3a1e-cb02-41aa-a68a-65b5ae159d1c)
+
+```javascript
+const rl = require("readline");
+
+const reader = rl.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
+
+reader.on("line", (line) => {
+  let str = line;
+
+  //  const A = JSON.parse(str);
+
+  console.log(PrintCharFreq(str));
+});
+
+function PrintCharFreq(myStr) {
+  let freqMap = new Map();
+  for (let i = 0; i < myStr.length; i++) {
+    let char = myStr[i];
+    freqMap.set(char, (freqMap.get(char) || 0) + 1);
+  }
+  let sortedKeys = Array.from(freqMap.keys()).sort();
+  let result = "";
+  for (let key of sortedKeys) result += key + " = " + freqMap.get(key) + "\n";
+  return result;
+}
+```
+
+# Sum and Mean
+
+[Question](https://course.acciojob.com/idle?question=73906a2d-1dfd-438d-a0ae-8a76b6cfb008)
+
+```javascript
+const SumAndMean = (Arr, N) => {
+  //Mean should be floor
+  //return an array having 2 elements sum and mean respectively
+  //do not console.log here
+  let sum = 0;
+  for (let i = 0; i < N; i++) {
+    sum += Arr[i];
+  }
+  let mean = Math.floor(sum / N);
+  return [sum, mean];
+};
+
+/*Do not change the code below*/
+
+var readline = require("readline").createInterface(process.stdin);
+
+let inputArr = [];
+var lineNumber = -1;
+var inputSize;
+var K;
+
+//multipleline input from User
+readline.on("line", readInputs);
+
+function readInputs(line) {
+  inputArr.push(line);
+  lineNumber++;
+  if (lineNumber == 0) {
+    size = parseInt(inputArr[0]);
+  }
+  //else if (lineNumber < size) {
+  // }
+
+  //Exit Condition
+  if (lineNumber == 1) {
+    logic("s");
+    readline.close();
+  }
+}
+
+function logic(input) {
+  const N = size;
+  const Arr = inputArr[1].split(" ").map((x) => parseInt(x));
+  console.log(SumAndMean(Arr, N).join(" ").trim());
+}
+```
+
+## Alternate Sum Product
+
+[Question](https://course.acciojob.com/idle?question=ac9f32a2-2923-46ac-b7d9-011f2bf088cd)
+
+```javascript
+var readline = require("readline").createInterface(process.stdin);
+
+let inputArr = [];
+var lineNumber = -1;
+var inputSize;
+
+//multipleline input from User
+readline.on("line", readInputs);
+
+function readInputs(line) {
+  inputArr.push(line);
+  lineNumber++;
+  if (lineNumber == 0) {
+    size = parseInt(inputArr[0]);
+  } else if (lineNumber < size) {
+  }
+
+  //Exit Condition
+  if (lineNumber == 1) {
+    logic("s");
+    readline.close();
+  }
+}
+
+function logic(input) {
+  const N = +inputArr[0];
+  inputArr.shift();
+  const Arr = inputArr[0].split(" ").map((x) => +x);
+
+  AlternateSumProduct(N, Arr);
+}
+
+const AlternateSumProduct = (n, arr) => {
+  // Your code here
+  // do not return anything print the alternate sum and product value.
+  let sum = 0;
+  let product = 1;
+  for (let i = 0; i < n; i++) {
+    if ((i + 1) % 2 === 0) {
+      sum += arr[i];
+    } else {
+      product *= arr[i];
+    }
+  }
+  console.log(sum, product);
+};
+```
+
+## Student Records - 2
+
+[Question](https://course.acciojob.com/idle?question=b325ed1d-81b1-4e4f-acd2-5e801154531f)
+
+```javascript
+function StudentRecords(Data) {
+  //return using return method
+  // do not console.log here
+  const filteredData = Data.filter((student) => student.marks > 50);
+  return JSON.stringify(filteredData, null, 2);
+}
+
+const rl = require("readline");
+
+const reader = rl.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
+
+reader.on("line", (line) => {
+  let str = line;
+  str = str.replace(/\\/g, "");
+  const A = JSON.parse(str);
+
+  console.log(StudentRecords(A));
+});
+```
+
+## Add average to array
+
+[Question](https://course.acciojob.com/idle?question=b3f01c5a-cf9a-4565-9a9e-df3e0725b859)
+
+```javascript
+import java.util.*;
+class Solution{
+static double average(int a[], int n)
+    {
+
+    // Your code here
+		 double sum = 0;
+    for (int i = 0; i < n; i++) {
+      sum += a[i];
+    }
+    double avg = sum / n;
+    return Math.round(avg * 100.0) / 100.0;
+    }
+	}
+public class Main {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int[] mat = new int[n];
+		for (int i = 0; i < n; i++) {
+			mat[i] = sc.nextInt();
+		}
+		double res = Solution.average(mat, n);
+		System.out.format("%.2f", res);
+	}
+}
+```
+
 # Assignment Solutions ReactJS
 
 ## Flames App
