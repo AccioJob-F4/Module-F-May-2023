@@ -6,6 +6,14 @@ React/Redux Interview Prep : [Github](https://github.com/sudheerj/reactjs-interv
 
 Redux Interview Questions : [Link](https://www.interviewbit.com/redux-interview-questions/#redux-mcq-questions)
 
+# Class Notes
+
+## Javascript
+
+Session 01 & Session 02 : [Google Doc](https://docs.google.com/document/d/1IMBjGesfpglHz4AZ00stYbEXBfvDYEvSbyEFBVS4fHk/edit?usp=sharing)
+
+Session 03 : [Google Doc](https://docs.google.com/document/d/10z7ap4pKXulEF0Vuw44-Gzpvxzmj3_lL7PXxgvDn3yk/edit?usp=sharing)
+
 # Important Links
 
 **_20 React Projects built from scratch for your practice purpose : [Youtube playlist](https://www.youtube.com/playlist?list=PL-J2q3Ga50oMQa1JdSJxYoZELwOJAXExP)_**
