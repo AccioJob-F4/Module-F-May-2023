@@ -10,7 +10,7 @@ Redux Interview Questions : [Link](https://www.interviewbit.com/redux-interview-
 
 ## Javascript
 
-Session 01 && Session 03 : [Google Doc](https://docs.google.com/document/d/1IMBjGesfpglHz4AZ00stYbEXBfvDYEvSbyEFBVS4fHk/edit?usp=sharing)
+Session 01 & Session 02 : [Google Doc](https://docs.google.com/document/d/1IMBjGesfpglHz4AZ00stYbEXBfvDYEvSbyEFBVS4fHk/edit?usp=sharing)
 
 Session 03 : [Google Doc](https://docs.google.com/document/d/10z7ap4pKXulEF0Vuw44-Gzpvxzmj3_lL7PXxgvDn3yk/edit?usp=sharing)
 
