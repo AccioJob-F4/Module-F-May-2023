@@ -14,6 +14,12 @@ Session 01 & Session 02 : [Google Doc](https://docs.google.com/document/d/1IMBjG
 
 Session 03 : [Google Doc](https://docs.google.com/document/d/10z7ap4pKXulEF0Vuw44-Gzpvxzmj3_lL7PXxgvDn3yk/edit?usp=sharing)
 
+Session 04 : [Google Doc](https://docs.google.com/document/d/1b1svxL0Tg9WPSxJy5I7LkP8ngr-uz86cWZWvrI_0AJ4/edit?usp=sharing)
+
+## ReactJS
+
+Session 01 : [Google Doc](https://docs.google.com/document/d/1tcr9JkMZtaZDpVD-qjNV9qmAtCdwZqde8fd0zTvB4Gk/edit#heading=h.hekahbvtw7kr)
+
 # Important Links
 
 **_20 React Projects built from scratch for your practice purpose : [Youtube playlist](https://www.youtube.com/playlist?list=PL-J2q3Ga50oMQa1JdSJxYoZELwOJAXExP)_**
@@ -51,8 +57,6 @@ Firebase : [GFG Link](https://www.geeksforgeeks.org/how-to-use-firestore-databas
 ## Shopping
 
 [Question](https://course.acciojob.com/idle?question=0252fab2-ae70-4fe8-890b-084c4b5b8e25)
-
-Solution :
 
 ```javascript
 function supermarket(prices, n, k) {
@@ -499,6 +503,223 @@ public class Main {
 		double res = Solution.average(mat, n);
 		System.out.format("%.2f", res);
 	}
+}
+```
+
+## Distinct Alphabets
+
+[Question](https://course.acciojob.com/idle?question=22f7123f-c888-47ff-8ca7-23e2567f9e71)
+
+```javascript
+function Alphabets(str) {
+  const alphabets = "abcdefghijklmnopqrstuvwxyz";
+  const charCount = {};
+
+  // Loop through each character in the string
+  for (let i = 0; i < str.length; i++) {
+    const char = str[i].toLowerCase(); // Convert the character to lowercase
+
+    // Check if the character is an alphabet
+    if (/^[a-zA-Z]$/.test(char)) {
+      // Increment the count for the character
+      charCount[char] = charCount[char] + 1 || 1;
+    }
+  }
+
+  for (let i = 0; i < alphabets.length; i++) {
+    if (!(alphabets[i] in charCount)) charCount[alphabets[i]] = 0;
+  }
+
+  const sortedKeys = Object.keys(charCount).sort();
+
+  // Create a new object with sorted keys
+  const sortedObj = {};
+  for (const key of sortedKeys) {
+    sortedObj[key] = charCount[key];
+  }
+  return Object.values(sortedObj).join(" ");
+}
+
+const readline = require("readline");
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+  terminal: false,
+});
+
+rl.on("line", function (line) {
+  let str = line;
+  //str = str.replace(/\\n/g, " ");
+
+  console.log(Alphabets(str));
+});
+```
+
+## Merge Sorted Arrays
+
+[Question](https://course.acciojob.com/idle?question=41938fec-9822-4ffe-bf92-6e2e68851d35)
+
+```javascript
+function mergeSortedArrays(arr1, arr2) {
+  // Do not console.log here
+  // only return the merged array
+  let i = 0;
+  let j = 0;
+  const mergedArray = [];
+
+  while (i < arr1.length && j < arr2.length) {
+    if (arr1[i] < arr2[j]) {
+      mergedArray.push(arr1[i]);
+      i++;
+    } else {
+      mergedArray.push(arr2[j]);
+      j++;
+    }
+  }
+
+  while (i < arr1.length) {
+    mergedArray.push(arr1[i]);
+    i++;
+  }
+
+  while (j < arr2.length) {
+    mergedArray.push(arr2[j]);
+    j++;
+  }
+
+  return mergedArray;
+}
+
+const readline = require("readline");
+
+const input = [];
+
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
+
+rl.on("line", function (cmd) {
+  input.push(cmd);
+});
+
+rl.on("close", function (cmd) {
+  Main(input);
+});
+
+function Main(input) {
+  const arr1 = JSON.parse(input[0]);
+  const arr2 = JSON.parse(input[1]);
+  const mergedArray = mergeSortedArrays(arr1, arr2);
+  process.stdout.write("[");
+  process.stdout.write(mergedArray.join(", "));
+  process.stdout.write("]");
+}
+```
+
+## K continuous elements sum check
+
+[Question](https://course.acciojob.com/idle?question=5465d817-a26d-4a7e-ac06-97cf409a2063)
+
+```javascript
+function subarraySum(arr, k) {
+  // return a boolean value
+  // do not console.log here
+  for (let i = 0; i <= arr.length - k; i++) {
+    let sum = 0;
+    for (let j = i; j < i + k; j++) {
+      sum += arr[j];
+    }
+    if (sum >= k) {
+      return true;
+    }
+  }
+  return false;
+}
+/*Do not change the code below */
+
+var readline = require("readline").createInterface(process.stdin);
+
+let inputArr = [];
+var lineNumber = -1;
+var inputSize;
+
+//multipleline input from User
+readline.on("line", readInputs);
+
+function readInputs(line) {
+  inputArr.push(line);
+  lineNumber++;
+
+  //Exit Condition
+  if (lineNumber == 1) {
+    logic("s");
+    readline.close();
+  }
+}
+
+function logic(input) {
+  let Arr = JSON.parse(inputArr[0].trim());
+  let k = parseInt(inputArr[1].trim());
+  // console.log(Arr,k);
+  console.log(subarraySum(Arr, k));
+}
+```
+
+## Diagonal Sum
+
+[Question](https://course.acciojob.com/idle?question=5eb11b5f-ecb6-4a1e-8a82-df9e59671a9d)
+
+```javascript
+function DiagonalSum(n, mat) {
+  // do not console.log here
+  // return using return method
+  let primarySum = 0;
+  let secondarySum = 0;
+
+  for (let i = 0; i < n; i++) {
+    primarySum += mat[i][i];
+    secondarySum += mat[i][n - i - 1];
+  }
+
+  return [primarySum, secondarySum];
+}
+
+/*Do not change any code below*/
+var readline = require("readline").createInterface(process.stdin);
+
+let inputArr = [];
+var lineNumber = -1;
+var inputSize;
+
+//multipleline input from User
+readline.on("line", readInputs);
+
+function readInputs(line) {
+  inputArr.push(line);
+  lineNumber++;
+  if (lineNumber == 0) {
+    size = parseInt(inputArr[0]);
+  } else if (lineNumber < size) {
+  }
+
+  //Exit Condition
+  if (lineNumber == size) {
+    logic("s");
+    readline.close();
+  }
+}
+
+function logic(input) {
+  const N = parseInt(inputArr[0]);
+  inputArr.shift();
+  let Matrix = [];
+  for (let i = 0; i < N; i = i + 1) {
+    const Arr = inputArr[i].split(" ").map((x) => +x);
+    Matrix.push(Arr);
+  }
+
+  console.log(DiagonalSum(N, Matrix).join(" "));
 }
 ```
 
