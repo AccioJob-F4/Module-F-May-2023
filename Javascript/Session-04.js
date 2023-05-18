@@ -86,7 +86,52 @@
 
 // console.log("Task executed");
 
-const a = { b: 1, c: 2 };
-a.d = a;
+// const a = { b: 1, c: 2 };
+// a.d = a;
 
-console.log(a);
+// console.log(a);
+
+// Event Loop
+
+// Call Stack
+// function greet() {
+//   console.log("Hello !");
+// }
+
+// function invokeGreet() {
+//   greet();
+// }
+
+// invokeGreet();
+
+// EVENT QUEUE
+// function delayedGreet() {
+//   setTimeout(() => {
+//     console.log("Delayed Hello");
+//   }, 3000);
+// }
+
+// delayedGreet();
+
+// console.log("Immediate Hello");
+
+// Steps for Event Loop
+// 1. Check if call stack is empty
+// 2. if call stack is empty, pick the oldest task (callback) from the event queue and push it in the call stack
+// 3. Execute the callback fn from call stack
+// 4. After execution remove the task from call stack
+// 5. Repeat step 1
+// OR
+// 2. if call stack is not empty then execute the tasks already present in call stack
+
+// console.log("Start");
+
+// setTimeout(() => {
+//   console.log("Timeout callback");
+// }, 3000);
+
+// Promise.resolve().then(() => {
+//   console.log("Promise callback");
+// });
+
+// console.log("End");
