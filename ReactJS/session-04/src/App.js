@@ -1,21 +1,41 @@
-import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { INCREMENT, DECREMENT } from "./actions/actions";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector, connect } from "react-redux";
+import { INCREMENT, DECREMENT, fetchUser } from "./actions/actions";
 
-const App = () => {
+const App = (props) => {
   const state = useSelector((state) => state);
-  console.log({ state });
+  // console.log({ state });
+  // console.log({ props });
   const dispatch = useDispatch();
 
-  const handleClick = (operation) => {
-    operation === "+"
-      ? dispatch({ type: INCREMENT })
-      : dispatch({ type: DECREMENT });
-  };
+  useEffect(() => {
+    fetchUser();
+  }, []);
+
+  // const handleClick = (operation) => {
+  //   // operation === "+"
+  //   //   ? dispatch({ type: INCREMENT })
+  //   //   : dispatch({ type: DECREMENT });
+
+  //   operation === "+"
+  //     ? props.incrementMapDispatchToProps()
+  //     : props.decrementMapDispatchToProps();
+  // };
 
   return (
     <div className="App">
-      <h1>Counter : {state.counterValue}</h1>
+      <button
+        onClick={() => {
+          fetchUser()(dispatch);
+        }}
+      >
+        API call
+      </button>
+
+      {console.log("App.js", state)}
+
+      {/* <h1>Counter : {state.counterValue}</h1> */}
+      {/* <h1>Counter : {props.counterValueFromMapStateToProps}</h1>
       <br />
 
       <button
@@ -32,9 +52,26 @@ const App = () => {
         }}
       >
         -
-      </button>
+      </button> */}
     </div>
   );
 };
+
+// const mapStateToProps = (state) => {
+//   return {
+//     counterValueFromMapStateToProps: state.counterValue,
+//   };
+// };
+
+// const mapDispatchToProps = (dispatch) => {
+//   return {
+//     incrementMapDispatchToProps: () => dispatch({ type: INCREMENT }),
+//     decrementMapDispatchToProps: () => dispatch({ type: DECREMENT }),
+//   };
+// };
+
+// export default connect(mapStateToProps)(App);
+// export default connect(mapStateToProps, mapDispatchToProps)(App);
+// export default connect(null, mapDispatchToProps)(App);
 
 export default App;

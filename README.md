@@ -26,6 +26,8 @@ Session 03 : [Google Doc](https://docs.google.com/document/d/1ToLM2sY85FfzU0n3a6
 
 Session 04 : [Google Doc](https://docs.google.com/document/d/1DRmyS9sxdp9VM_E2SFrctoof9qC6fuKq__PX_z249v0/edit?usp=sharing)
 
+Session 05 : [Google Doc](https://docs.google.com/document/d/1fVUBXBE-dhflluu8rEcMeWNNCT0rZD2Jkx_UAYIq4HQ/edit?usp=sharing)
+
 # Important Links
 
 **_20 React Projects built from scratch for your practice purpose : [Youtube playlist](https://www.youtube.com/playlist?list=PL-J2q3Ga50oMQa1JdSJxYoZELwOJAXExP)_**
