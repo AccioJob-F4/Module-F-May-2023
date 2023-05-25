@@ -28,6 +28,10 @@ Session 04 : [Google Doc](https://docs.google.com/document/d/1DRmyS9sxdp9VM_E2SF
 
 Session 05 : [Google Doc](https://docs.google.com/document/d/1fVUBXBE-dhflluu8rEcMeWNNCT0rZD2Jkx_UAYIq4HQ/edit?usp=sharing)
 
+## HTML & CSS
+
+Session 01 : [Google Doc](https://docs.google.com/document/d/10UxP9uRi3mIOt_m9-JSh5U9OyrinObpISPT2t6dYd74/edit?usp=sharing)
+
 # Important Links
 
 **_20 React Projects built from scratch for your practice purpose : [Youtube playlist](https://www.youtube.com/playlist?list=PL-J2q3Ga50oMQa1JdSJxYoZELwOJAXExP)_**
