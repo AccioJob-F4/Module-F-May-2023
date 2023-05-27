@@ -1,0 +1,37 @@
+/* selector {
+  prop1: val1;
+} */
+
+#p_tag {
+  color: dodgerblue;
+}
+
+.p_tag_class {
+  color: yellow;
+}
+
+p {
+  color: red;
+}
+/* 
+#p_tag {
+  font-weight: 700;
+} */
+
+input[type="text"] {
+  color: dodgerblue;
+}
+
+/* p {
+  color: dodgerblue;
+} */
+
+#p_tag {
+  color: green;
+}
+
+@media screen and (max-width: 600px) {
+  #p_tag {
+    color: brown;
+  }
+}
